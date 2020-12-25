@@ -94,6 +94,7 @@
             <li><s>Chicken,Mutton,Beef,Prawn Biriyani</s></li>
             <li><s>Fried Rice</s></li>
             <li>My Mom's Kerala style fish recipe</li>
+            <li>Fish cutlet</li>
           </ul>
         </li>
       </ul>
@@ -105,7 +106,7 @@
 export default {};
 </script>
 
-<style >
+<style>
 .goals-content {
   text-align: justify;
 }
