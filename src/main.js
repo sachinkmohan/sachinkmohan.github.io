@@ -13,11 +13,11 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
     routes: [
-        { path: '/', component: HelloWorld },
-        { path: '/easymalayalam', component: Skills },
-        { path: '/now', component: Now },
-        { path: '/nerdstats', component: Terminal },
-        { path: '/myimpossiblelist', component: MyImpossibleList },
+        { path: '/', component: HelloWorld},
+        { path: '/easymalayalam', component: Skills},
+        { path: '/now', component: Now},
+        { path: '/nerdstats', component: Terminal},
+        { path: '/myimpossiblelist', component: MyImpossibleList}
     ],
     mode: "history",
 });
