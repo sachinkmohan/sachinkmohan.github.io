@@ -3,7 +3,7 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/easymalayalam">Easy Malayalam</router-link> |
-      <router-link to="/now">Now</router-link> |
+      <router-link to="/now">Now_1</router-link> |
       <router-link to="/nerdstats">NerdStats</router-link> |
       <router-link to="/myimpossiblelist">My Impossible List </router-link>
     </div>
