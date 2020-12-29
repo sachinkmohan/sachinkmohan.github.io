@@ -3,6 +3,9 @@
     <h1>Welcome to Sachin's Website</h1>
     <img src="../../images/cover.jpg" alt="Flowers in Chania" width="581" height="387">
 
+    <div class="classes">
+        <p> <a href="https://www.notion.so/1cba911391f1466c9496add7c6e1d701?v=b17c5eb5ec5d4fcbbf9858af08b5080a" target="_blank">My Book Summaries</a></p>
+    </div>
 
 
   </div>
