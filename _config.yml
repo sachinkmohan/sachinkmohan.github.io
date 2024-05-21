@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
+title: Digital Alchemist
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -31,6 +31,7 @@ github_username: jekyll
 
 # Build settings
 remote_theme: "mmistakes/minimal-mistakes@4.26.1"
+minimal_mistakes_skin: "contrast" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 plugins:
   - jekyll-feed
   - jekyll-include-cache
@@ -54,3 +55,8 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+author:
+  name: Sachin K Mohan
+  bio: "Software engineer who loves to develop apps! 🥳"
+  location: "Rheinland-Pfalz, Germany"
