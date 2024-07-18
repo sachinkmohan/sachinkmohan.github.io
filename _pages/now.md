@@ -11,7 +11,7 @@ I got inspiration to create this page from [Derek Silver Page](https://sive.rs/n
 
 ## My Current Project
 
-I am currently building a Vocabulary builder for my language learning students using the following stack.
+I am currently building a Vocabulary builder for my language learning students using the following stack 🧱
 
 - Frontend using - React, Typescript and Tailwind
 - Backend - Firebase
