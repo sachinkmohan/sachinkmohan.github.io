@@ -7,7 +7,7 @@ last_modified_at: 2024-07-18T23:20:26-04:00
 
 Updated: 18th July 2024
 
-I got inspiration to create this page from [Derek Silver Page](https://sive.rs/now). Not only me, a lot of people have picked inspiration from him. Give it a shot!
+I got inspiration to create this page from [Derek Silver Page](https://sive.rs/now). Not only me, a lot of people have picked inspiration from him. Do check it out 😉!
 
 ## My Current Project
 
