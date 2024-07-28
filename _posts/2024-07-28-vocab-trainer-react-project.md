@@ -31,6 +31,6 @@ So far, I have built the following pages for the site.
 
 > Following is the demo 📹 ⏯️ of the admin page where the data is entered in CSV format.
 
-P.S - There is a short lag after pressing the button. If you have patience for 2 more seconds, then you will see a toast message that the words are added successfully. 🤞
+P.S - There is a short lag after pressing the button. If you have patience for 5 more seconds, then you will see a toast message that the words are added successfully. 🤞
 
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/adding-words-demo.gif" alt="Backlog Sprint 3 Image" class="full">
