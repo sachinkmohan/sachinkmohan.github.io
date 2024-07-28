@@ -5,13 +5,13 @@ excerpt: "Now Page"
 last_modified_at: 2024-07-21T23:20:26-04:00
 ---
 
-Updated: 21st July 2024
+Updated: 28th July 2024
 
 I got inspiration 💪 to create this page from [Derek Silver Page](https://sive.rs/now). Not only me, a lot of people have picked inspiration from him. Do check it out 😉!
 
-## Main Project
+## VUE JS - Project
 
-Current focus is on migrating Vue 2 into Vue 3 using Nuxt 3.
+Migration from Vue 2 to Vue 3 using Nuxt 3.
 
 Learnings so far: ✅
 
@@ -21,7 +21,9 @@ Learnings so far: ✅
 - changes from Vuetify 2 to Vuetify 3
 - Typescript
 
-## My Current Side Project
+## REACT JS - My Fun Side Project
+
+[Full project details here]({% link _posts/2024-07-28-vocab-trainer-react-project.md %})
 
 I am currently building a Vocabulary builder for my language learning students using the following stack 🧱
 
@@ -29,16 +31,15 @@ I am currently building a Vocabulary builder for my language learning students u
 - Backend - Firebase
 - Unit testing - Jest
 
-So far, I have built the following pages for the site.
+#### Upcoming sprints 🚧 🔖
 
-- SignUp page
-- Login Page
-- Admin Page - Where the Admin can enter values in CSV format
+- Working on Login Page, Forgot Password Page.
+- Show the words in the dashboard.
+- Design Figma to show the words in the dashboard.
 
-My thoughts 🧠 - I had a lot of fun building so far. As it is a new project, I had few difficulties setting it up in terms of unit tests and typescript configurations.
-
-Current status 🚧 🔖
+#### Things built last sprint.
 
 - Setup Layout for the site.
-- Navigation bar is also done.
-- Need to fix mocking for the import.meta problem in the firebase config file.
+- Navigation bar is done.
+- Fixed mocking for the import.meta problem in the firebase config file.
+- Added toasts using react-toastify.
