@@ -5,6 +5,8 @@ date: 2024-07-28 22:10:55 +0200
 categories: react
 ---
 
+> Repo link - [Vocab Trainer](https://github.com/sachinkmohan/em-vocab-trainer)
+
 I have been wanting to develop an mobile app for my Malayalam language learning students for a long time. I made an attempt back in 2020-21 using React Native and Expo. But due to many similar apps like that in the market, my app was reject by Apple App Store. I couldn't get back to it due to other commitments. But here I am again, trying to build a web app using React 18 with my web development experience so far 🚀. This time, it is going to be different, as I am using TDD, clean code principles to build a stable app.
 
 As I have laid the foundation for the app, I jumped right in by refining the ideas on paper and got some stories on my Jira board.
