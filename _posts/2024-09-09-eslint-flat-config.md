@@ -29,3 +29,5 @@ export default [
     },
   },
 ```
+
+Reference link - https://eslint.org/docs/latest/use/configure/language-options
