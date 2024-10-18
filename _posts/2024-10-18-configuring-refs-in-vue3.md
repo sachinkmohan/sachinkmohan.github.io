@@ -6,3 +6,9 @@ categories: vue3
 ---
 
 
+```
+<ExampleComponent
+        ref="discardMessage"
+></ExampleComponent>
+
+```
