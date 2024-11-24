@@ -2,10 +2,10 @@
 permalink: /now/
 title: "Now Page"
 excerpt: "Now Page"
-last_modified_at: 2024-09-08T23:20:26-04:00
+last_modified_at: 2024-11-24T23:20:26-04:00
 ---
 
-Updated: 08th September 2024
+Updated: 24th November 2024
 
 I got inspiration 💪 to create this page from [Derek Silver Page](https://sive.rs/now). Not only me, a lot of people have picked inspiration from him. Do check it out 😉!
 
@@ -31,17 +31,12 @@ I am currently building a Vocabulary builder for my language learning students u
 - Backend - Firebase
 - Unit testing - Jest
 
-#### Upcoming sprints - Focus on App launch 🚧 🔖
+#### Upcoming sprints - Launch app with 'Learn Words Game' 🚧 🔖
 
-##### Epic - Final Touch - App Launch 🚀
+##### Epic - Learn Words Game 🚀
 
-- Finish setting up Signup page.
-- Create context on the saving user data.
-- Login - username, password - fail validation
-- Replace JSON server with JSON file.
-- Hide Admin page to add words.
+Currently Working on: Working on the implementation for the 'Learn Words' game.
 
 #### Things built last sprint.
 
-- ✅ Add and Read Data from JSON using json-server.
-- ✅ Added the feature to favorite the words to firebase DB.
+- ✅ Launched the app version 2.0 with major change on the JSON structure.
