@@ -2,10 +2,10 @@
 permalink: /now/
 title: "Now Page"
 excerpt: "Now Page"
-last_modified_at: 2024-11-24T23:20:26-04:00
+last_modified_at: 2025-01-09T23:20:26-04:00
 ---
 
-Updated: 24th November 2024
+Updated: 9th Jan 2025
 
 I got inspiration 💪 to create this page from [Derek Silver Page](https://sive.rs/now). Not only me, a lot of people have picked inspiration from him. Do check it out 😉!
 
@@ -35,8 +35,8 @@ I am currently building a Vocabulary builder for my language learning students u
 
 ##### Epic - Learn Words Game 🚀
 
-Currently Working on: Working on the implementation for the 'Learn Words' game.
+Currently Working on: Working on the scoring system.
 
 #### Things built last sprint.
 
-- ✅ Launched the app version 2.0 with major change on the JSON structure.
+- ✅ Finished the Quiz module on the learned words.
