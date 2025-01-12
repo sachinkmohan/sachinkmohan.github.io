@@ -9,6 +9,8 @@ categories: react
 
 > Repo link - [Vocab Trainer](https://github.com/sachinkmohan/em-vocab-trainer)
 
+> Application Link - [https://bhasha-trainer.netlify.app/](https://bhasha-trainer.netlify.app/)
+
 > Test credentials ->
 > username: whitetiger@dummy.com
 > password: dummy123
