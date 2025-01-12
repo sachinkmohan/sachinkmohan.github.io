@@ -1,11 +1,17 @@
 ---
 layout: single
 title: "React Project - Vocab Trainer"
-date: 2024-07-28 22:10:55 +0200
+date: 2025-01-12 23:10:55 +0200
 categories: react
 ---
 
+> This is an ongoing project since July 2, 2024.
+
 > Repo link - [Vocab Trainer](https://github.com/sachinkmohan/em-vocab-trainer)
+
+> Test credentials ->
+> username: whitetiger@dummy.com
+> password: dummy123
 
 I have been wanting to develop an mobile app for my Malayalam language learning students for a long time. I made an attempt back in 2020-21 using React Native and Expo. But due to many similar apps like that in the market, my app was reject by Apple App Store. I couldn't get back to it due to other commitments. But here I am again, trying to build a web app using React 18 with my web development experience so far 🚀. This time, it is going to be different, as I am using TDD, clean code principles to build a stable app.
 
@@ -25,14 +31,34 @@ I am currently building a Vocabulary builder for my language learning students u
 - Backend - Firebase
 - Unit testing - Jest & testing-library for React
 
-So far, I have built the following pages for the site.
-
-1. SignUp page
-2. Login Page
-3. Admin Page - Where the Admin can enter values in CSV format
-
 > Following is the demo 📹 ⏯️ of the admin page where the data is entered in CSV format.
 
 P.S - There is a short lag after pressing the button. If you have patience for 5 more seconds, then you will see a toast message that the words are added successfully. 🤞
 
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/adding-words-demo.gif" alt="Backlog Sprint 3 Image" class="full">
+
+# Features
+
+## As an Admin(Screenshot above)
+
+- You can add words to database in multiple languages.
+
+- You can edit individual word entries
+
+## As an User
+
+### Signup & Login
+
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/2024-07-28-vocab-trainer-react-project/signup.png" alt="signup" class="full">
+
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/2024-07-28-vocab-trainer-react-project/login.png" alt="login" class="full">
+
+### User can learn new words.
+
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/2024-07-28-vocab-trainer-react-project/learn-words.png" alt="learn-words" class="full">
+
+### Before learning again, user should pass 60% in a quiz.
+
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/2024-07-28-vocab-trainer-react-project/learn-words-quiz.png" alt="learn-words-quiz" class="full">
+### A word list page to view all the words learned.
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/2024-07-28-vocab-trainer-react-project/word-list.png" alt="word-list" class="full">

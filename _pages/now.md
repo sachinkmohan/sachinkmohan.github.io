@@ -2,10 +2,13 @@
 permalink: /now/
 title: "Now Page"
 excerpt: "Now Page"
-last_modified_at: 2025-01-09T23:20:26-04:00
+last_modified_at: 2025-01-13T23:20:26-04:00
 ---
 
-Updated: 9th Jan 2025
+Updated: 13th Jan 2025
+
+> Quick Update - Relaunched my React App. Check the blog under React JS for updates & also to test the app.
+> Also completing certification - Frontend Developer path on Scrimba.
 
 I got inspiration 💪 to create this page from [Derek Silver Page](https://sive.rs/now). Not only me, a lot of people have picked inspiration from him. Do check it out 😉!
 
