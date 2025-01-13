@@ -1,12 +1,13 @@
 ---
-permalink: /resume/
-title: "Lebenslauf/Resume"
-excerpt: "Resume Page"
-last_modified_at: 2024-06-11T23:20:26-04:00
+permalink: /log/
+title: "Log"
+excerpt: "Log"
+last_modified_at: 2025-01-13T23:20:26-04:00
 ---
 
-## Lebenslauf
+### 2025
 
-Unter 👇 diesem Link finden Sie meinen Lebenslauf/Resume.
-
-[Dropbox Lebenslauf Link](https://www.dropbox.com/scl/fi/hc502fl1bgqbayxjb47zj/Lebenslauf_Sachin_K_Mohan_2024_v6.pdf?rlkey=xbxr8aywnjnyqrqxdhafpeq4o&st=8esrhtik&dl=0)
+- Upcoming blog on copilot instructions.
+- Ongoing certification - Frontend Developer path on Scrimba.
+- Getting closer to the Grand Launch of my React Application.
+- Jan - Wrote a blog on React Function Component
