@@ -1,0 +1,81 @@
+---
+import ButtonLink from "./ButtonLink.astro";
+import Section from "./Section.astro";
+---
+
+<Section>
+  <header id="header">
+    <div>
+      <h1>
+        Hi! I'm Sachin. <span class="accent"> Full Stack</span> Web & App Developer
+      </h1>
+      <p>
+        I’m a Full-Stack Developer specializing in React.js, Next.js, Node.js,
+        and database management. I build scalable, high-performance web
+        applications, robust back-end architecture, and efficient API
+        integrations.
+      </p>
+      <div class="button-container mt-5">
+        <ButtonLink variant="secondary" href="/" text="View Projects" />
+        <ButtonLink
+          variant="primary"
+          text="Download Resume"
+          href="/"
+          isDownload={true}
+        />
+      </div>
+    </div>
+    <img src="/images/me.jpg" class="w-48 rounded-full mt-5" />
+  </header>
+</Section>
+
+<style>
+  #header {
+    display: grid;
+    grid-template-columns: 540px 1fr;
+    justify-items: center;
+    gap: 80px;
+    align-items: center;
+
+    h1 {
+      font-size: 44px;
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+
+      .accent {
+        color: var(--primary);
+      }
+    }
+
+    .button-container {
+      display: flex;
+      gap: 10px;
+    }
+
+    .description {
+      line-height: 28px;
+      color: var(--dark);
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 1000px) {
+      & {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 40px;
+
+        img {
+          grid-row: 1;
+        }
+      }
+    }
+
+    @media (max-width: 600px) {
+      .button-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  }
+</style>
