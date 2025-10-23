@@ -1,26 +1,18 @@
 [
   {
-    "title": "E-commerce Dashbord",
-    "slug": "project-1",
-    "description": "A fast, scalable admin panel for managing products, orders, and sales analytics. Built with React, Next.js, Firebase, and TailwindCSS.",
-    "image": "/images/projects/project-1.png",
-    "githubURL": "https://github.com/jamesqquick",
-    "liveSiteURL": "https://jamesqquick.com"
+    "title": "Sit Smart",
+    "slug": "sit-smart",
+    "description": "A health app focused on improving sit and standing times while coding. Built with ReactJS and TailwindCSS.",
+    "image": "/images/projects/sit-smart-project-cover.png",
+    "githubURL": "https://github.com/sachinkmohan/sit-smart",
+    "liveSiteURL": "https://sit-smart.netlify.app/"
   },
   {
-    "title": "SaaS Landing Page",
-    "slug": "project-2",
-    "description": "A redesign of ABC’s landing page, improving UI/UX, conversion rates, and performance. Built with Next.js, TailwindCSS, and Framer Motion.",
-    "image": "/images/projects/project-2.png",
-    "githubURL": "https://github.com/jamesqquick",
-    "liveSiteURL": "https://jamesqquick.com"
-  },
-  {
-    "title": "DevTools Chrome Extension",
-    "slug": "project-3",
-    "description": "A Chrome DevTools extension for monitoring API requests in real-time. It provides live request logging and response analysis for developers.",
-    "image": "/images/projects/project-3.png",
-    "githubURL": "https://github.com/jamesqquick",
-    "liveSiteURL": "https://jamesqquick.com"
+    "title": "HabitaTron Habit App",
+    "slug": "habitatron-habit-app",
+    "description": "An app focused on building and tracking habits in a modern way. Built with VueJS 3, Vuetify, and Firebase.",
+    "image": "/images/projects/habitatron-project-cover.png",
+    "githubURL": "https://github.com/sachinkmohan/tododo-v4",
+    "liveSiteURL": "https://tododo-v4.netlify.app/"
   }
 ]

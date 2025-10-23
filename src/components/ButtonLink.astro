@@ -6,12 +6,12 @@ interface Props {
   isDownload?: boolean;
 }
 
-const { href, text, variant = "primary", isDownload } = Astro.props;
+const { href, text, variant = "primary", isDownload} = Astro.props;
 ---
 
 {
   isDownload && (
-    <a href={href} class=`button-link ${variant}` download>
+    <a href={href} class=`button-link ${variant}`  download>
       {text}
     </a>
   )
@@ -19,11 +19,13 @@ const { href, text, variant = "primary", isDownload } = Astro.props;
 
 {
   !isDownload && (
-    <a href={href} class=`button-link ${variant}`>
+    <a href={href} class={`button-link ${variant}`} target="_blank" rel="noopener noreferrer">
       {text}
     </a>
   )
 }
+
+
 
 <style>
   .button-link {
