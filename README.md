@@ -1,3 +1,31 @@
+# How this Blog works
+
+```
+Markdown Files (src/data/blog/)
+        │
+        ▼
+Content Schema (content.config.ts)
+        │
+        ▼
+getCollection("blog") API
+        │
+        ├─► blog.astro (List all posts)
+        │        │
+        │        ▼
+        │   BlogCard.astro (Preview)
+        │        │
+        │        ▼
+        │   Links to /blog/{id}
+        │
+        └─► [slug].astro (Individual post)
+                 │
+                 ▼
+              render() → Markdown to HTML
+                 │
+                 ▼
+         Prose component (Tailwind typography)
+```
+
 # Astro Starter Kit: Basics
 
 ```sh

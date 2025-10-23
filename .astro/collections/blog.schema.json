@@ -32,8 +32,7 @@
         "title",
         "description",
         "date",
-        "tags",
-        "image"
+        "tags"
       ],
       "additionalProperties": false
     }

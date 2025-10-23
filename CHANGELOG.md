@@ -93,9 +93,12 @@ This means component-level styles can always override global headings when neede
 
 ```astro
 <!-- Anywhere in your site -->
-<h1>Page Title</h1>        <!-- Automatically styled -->
-<h2>Section Heading</h2>   <!-- Automatically styled -->
-<h3>Subsection</h3>        <!-- Automatically styled -->
+<h1>Page Title</h1>
+<!-- Automatically styled -->
+<h2>Section Heading</h2>
+<!-- Automatically styled -->
+<h3>Subsection</h3>
+<!-- Automatically styled -->
 
 <!-- Override when needed -->
 <h1 class="text-red-600">Special Title</h1>

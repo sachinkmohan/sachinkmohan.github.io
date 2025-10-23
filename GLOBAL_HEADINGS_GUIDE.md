@@ -28,8 +28,12 @@ According to Astro docs:
     color: var(--dark);
   }
 
-  h2 { /* ... */ }
-  h3 { /* ... */ }
+  h2 {
+    /* ... */
+  }
+  h3 {
+    /* ... */
+  }
   /* ... h4-h6 */
 </style>
 ```
@@ -56,11 +60,12 @@ According to Astro docs:
 Import a dedicated global stylesheet in your layout:
 
 ```astro
-<!-- src/layouts/Layout.astro -->
 ---
 import "../styles/global.css";
 import "../styles/typography.css"; // Separate typography file
 ---
+
+<!-- src/layouts/Layout.astro -->
 ```
 
 ```css
@@ -155,22 +160,34 @@ We used **Option 1** (`<style is:global>` in Layout.astro) because:
 <style is:global>
   /* Global heading styles using Tailwind 4 theme variables */
   h1 {
-    font-size: var(--text-h1);  /* From @theme in global.css */
+    font-size: var(--text-h1); /* From @theme in global.css */
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
-    color: var(--dark);  /* From :root variables */
+    color: var(--dark); /* From :root variables */
   }
 
-  h2 { font-size: var(--text-h2); /* ... */ }
-  h3 { font-size: var(--text-h3); /* ... */ }
-  h4 { font-size: var(--text-h4); /* ... */ }
-  h5 { font-size: var(--text-h5); /* ... */ }
-  h6 { font-size: var(--text-h6); /* ... */ }
+  h2 {
+    font-size: var(--text-h2); /* ... */
+  }
+  h3 {
+    font-size: var(--text-h3); /* ... */
+  }
+  h4 {
+    font-size: var(--text-h4); /* ... */
+  }
+  h5 {
+    font-size: var(--text-h5); /* ... */
+  }
+  h6 {
+    font-size: var(--text-h6); /* ... */
+  }
 
   /* Responsive variants for mobile */
   @media (max-width: 768px) {
-    h1 { font-size: 2rem; }
+    h1 {
+      font-size: 2rem;
+    }
     /* ... smaller sizes ... */
   }
 </style>
@@ -281,14 +298,17 @@ This means:
 
 ```astro
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
   <article>
-    <h1>My Blog Post</h1>  <!-- Uses global h1 styles -->
-    <h2>Introduction</h2>   <!-- Uses global h2 styles -->
-    <h3>Section 1</h3>      <!-- Uses global h3 styles -->
+    <h1>My Blog Post</h1>
+    <!-- Uses global h1 styles -->
+    <h2>Introduction</h2>
+    <!-- Uses global h2 styles -->
+    <h3>Section 1</h3>
+    <!-- Uses global h3 styles -->
   </article>
 </Layout>
 ```

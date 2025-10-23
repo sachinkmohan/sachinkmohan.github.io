@@ -20,7 +20,7 @@ const blog = defineCollection({
     description: z.string().max(200),
     date: z.string().date(),
     tags: z.array(z.string()),
-    image: z.string(),
+    image: z.string().optional(),
   }),
 });
 
