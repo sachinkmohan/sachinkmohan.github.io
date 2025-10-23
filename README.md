@@ -1,5 +1,11 @@
 # How this Blog works
 
+Note if you need image in the Blog add the below to the frontmatter of the markdown file:
+
+```yaml
+image: "/images/posts/post-1.jpg"
+```
+
 ```
 Markdown Files (src/data/blog/)
         │
