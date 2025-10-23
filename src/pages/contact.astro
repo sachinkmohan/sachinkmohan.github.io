@@ -1,0 +1,23 @@
+---
+import Section from "../components/Section.astro";
+import Layout from "../layouts/Layout.astro";
+
+const heading = "Contact Me";
+---
+
+<Layout>
+  <Section>
+    <h1>{heading}</h1>
+
+    <p class="text-lg animate-bounce">
+      You can contact me on the below socials mentioned on the footer of this
+      page
+    </p>
+
+    <img
+      src="/images/internal/contact-website.png"
+      alt="Contact Me"
+      loading="lazy"
+    />
+  </Section>
+</Layout>
