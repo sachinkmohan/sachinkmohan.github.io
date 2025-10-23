@@ -5,3 +5,25 @@
 <div class="prose max-w-none">
   <slot />
 </div>
+
+<style>
+  /* Existing: Inline code styling (single backticks) */
+  .prose :global(code:not(pre code)) {
+    background-color: #dbdcde; /* gray-100 */
+    padding: 0.2em 0.4em;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+    font-weight: 600;
+    font-family:
+      ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+      "DejaVu Sans Mono", monospace;
+  }
+
+  /* Added: Code block container styling (triple backticks) */
+  .prose :global(pre) {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto; /* Horizontal scroll for long code */
+    margin: 1.5rem 0;
+  }
+</style>
