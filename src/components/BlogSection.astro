@@ -13,11 +13,5 @@ const posts = await getCollection("blog");
 <!-- wrap with Section --><!-- add section header --><!-- replace hard-coded blog post with dynamically rendered posts -->
 <Section>
   <SectionHeader cta={cta} heading={heading} />
-  {
-    posts.map((post) => (
-      <BlogCard post={post} />
-    ))
-  }
+  {posts.map((post) => <BlogCard post={post} />)}
 </Section>
-
-
