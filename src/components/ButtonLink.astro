@@ -3,11 +3,10 @@ interface Props {
   href: string;
   text: string;
   variant?: 'primary' | 'secondary';
-  isDownload?: boolean;
   target?: 'internal' | 'external' | 'download';
 }
 
-const { href, text, variant = "primary", target } = Astro.props;
+const { href, text, variant = "primary", target = "internal" } = Astro.props;
 ---
 
 {
@@ -28,7 +27,7 @@ const { href, text, variant = "primary", target } = Astro.props;
 
 {
   target === 'internal' && (
-    <a href={href} class={`button-link ${variant}`} >
+    <a href={href} class={`button-link ${variant}`}>
       {text}
     </a>
   )

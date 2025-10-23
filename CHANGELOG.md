@@ -3,6 +3,7 @@
 ## [2025-10-22] - Implemented Global Heading Styles (h1-h6)
 
 ### Added
+
 - **Global heading styles** for h1 through h6 in `Layout.astro`
   - h1: 2.5rem (40px) → 2rem (32px) on mobile, 700 weight
   - h2: 2rem (32px) → 1.75rem (28px) on mobile, 600 weight
@@ -23,6 +24,7 @@
   - Complete heading scale reference
 
 ### Changed
+
 - **Layout.astro**: Added `<style is:global>` block with complete heading definitions
   - Uses Tailwind 4 theme variables (`var(--text-h1)` through `var(--text-h6)`)
   - Uses design system color (`var(--dark)`) for consistency
@@ -32,17 +34,20 @@
 ### Technical Details
 
 **Approach Chosen:**
+
 - **Method:** `<style is:global>` in Layout component
 - **Why:** Astro's officially recommended approach for global styles
 - **Documentation Reference:** https://docs.astro.build/en/guides/styling/#global-styles
 
 **Implementation Details:**
+
 1. Theme variables defined in `global.css` using `@theme` directive
 2. Global styles applied in `Layout.astro` using `<style is:global>`
 3. All heading sizes use CSS variables for maintainability
 4. Responsive variants added with media query
 
 **Cascade Order (from Astro docs):**
+
 1. `<link>` tags in head (lowest precedence)
 2. Imported styles
 3. **Global styles** (`<style is:global>`) ← Our heading styles
@@ -53,6 +58,7 @@ This means component-level styles can always override global headings when neede
 ### Best Practices Followed
 
 ✅ **Astro Recommendations:**
+
 - Used `<style is:global>` for truly global typography
 - Kept global styles in main Layout component
 - Leveraged CSS variables from `@theme`
@@ -60,6 +66,7 @@ This means component-level styles can always override global headings when neede
 - Allowed component overrides
 
 ✅ **Typography Best Practices:**
+
 - Clear visual hierarchy (h1 largest → h6 smallest)
 - Consistent line-heights for readability
 - Appropriate font-weights for distinction
@@ -67,6 +74,7 @@ This means component-level styles can always override global headings when neede
 - Proper spacing with margin-bottom
 
 ✅ **Maintainability:**
+
 - Single source of truth in Layout.astro
 - Uses variables for easy customization
 - Well-documented in GLOBAL_HEADINGS_GUIDE.md
@@ -95,6 +103,7 @@ This means component-level styles can always override global headings when neede
 ```
 
 ### Related Files
+
 - `src/layouts/Layout.astro` - Global heading implementation
 - `src/styles/global.css` - Theme variable definitions
 - `GLOBAL_HEADINGS_GUIDE.md` - Complete documentation and best practices

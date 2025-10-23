@@ -13,6 +13,7 @@ According to **Astro documentation**, there are **3 recommended approaches** for
 ### Why This Approach?
 
 According to Astro docs:
+
 > "While we recommend scoped styles for most components, you may eventually find a valid reason to write global, unscoped CSS. You can opt-out of automatic CSS scoping with the `<style is:global>` attribute."
 
 ### Implementation:
@@ -26,7 +27,7 @@ According to Astro docs:
     line-height: 1.2;
     color: var(--dark);
   }
-  
+
   h2 { /* ... */ }
   h3 { /* ... */ }
   /* ... h4-h6 */
@@ -34,6 +35,7 @@ According to Astro docs:
 ```
 
 ### ✅ **Advantages:**
+
 - **Astro's recommended method** for global styles
 - **Single source of truth** - all pages use the same layout
 - **Easy to maintain** - one place to change heading styles
@@ -42,6 +44,7 @@ According to Astro docs:
 - **Component styles can override** when needed
 
 ### ✅ **Best For:**
+
 - Site-wide consistent typography
 - Standard heading hierarchy
 - Projects using a main layout wrapper
@@ -72,15 +75,18 @@ h1 {
 ```
 
 ### ✅ **Advantages:**
+
 - **Separation of concerns** - typography in its own file
 - **Easier to find** - dedicated typography stylesheet
 - **Can be reused** across multiple layouts
 
 ### ⚠️ **Disadvantages:**
+
 - Extra file to manage
 - Needs to be imported in every layout that needs it
 
 ### ✅ **Best For:**
+
 - Large projects with multiple layouts
 - When you want to organize CSS into separate files
 
@@ -112,11 +118,13 @@ Use Tailwind's base layer for heading styles:
 ```
 
 ### ⚠️ **Note:**
+
 - Tailwind 4's `@layer base` is different from Tailwind 3
 - Less commonly used in Astro projects
 - More complex setup
 
 ### ✅ **Best For:**
+
 - Tailwind-heavy projects
 - When you want Tailwind to manage everything
 
@@ -124,15 +132,15 @@ Use Tailwind's base layer for heading styles:
 
 ## 📊 **Comparison Table**
 
-| Feature | Option 1: `<style is:global>` | Option 2: Import CSS | Option 3: Tailwind @layer |
-|---------|-------------------------------|----------------------|---------------------------|
-| **Astro Recommended** | ✅ | ✅ | ⚠️ |
-| **Ease of Use** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
-| **Maintainability** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
-| **Single Source** | ✅ | ✅ | ✅ |
-| **Separation of Concerns** | ⚠️ | ✅ | ✅ |
-| **Performance** | Excellent | Excellent | Excellent |
-| **Override Flexibility** | ✅✅ | ✅✅ | ✅ |
+| Feature                    | Option 1: `<style is:global>` | Option 2: Import CSS | Option 3: Tailwind @layer |
+| -------------------------- | ----------------------------- | -------------------- | ------------------------- |
+| **Astro Recommended**      | ✅                            | ✅                   | ⚠️                        |
+| **Ease of Use**            | ⭐⭐⭐⭐⭐                    | ⭐⭐⭐⭐             | ⭐⭐⭐                    |
+| **Maintainability**        | ⭐⭐⭐⭐⭐                    | ⭐⭐⭐⭐             | ⭐⭐⭐                    |
+| **Single Source**          | ✅                            | ✅                   | ✅                        |
+| **Separation of Concerns** | ⚠️                            | ✅                   | ✅                        |
+| **Performance**            | Excellent                     | Excellent            | Excellent                 |
+| **Override Flexibility**   | ✅✅                          | ✅✅                 | ✅                        |
 
 ---
 
@@ -153,13 +161,13 @@ We used **Option 1** (`<style is:global>` in Layout.astro) because:
     margin-bottom: 1rem;
     color: var(--dark);  /* From :root variables */
   }
-  
+
   h2 { font-size: var(--text-h2); /* ... */ }
   h3 { font-size: var(--text-h3); /* ... */ }
   h4 { font-size: var(--text-h4); /* ... */ }
   h5 { font-size: var(--text-h5); /* ... */ }
   h6 { font-size: var(--text-h6); /* ... */ }
-  
+
   /* Responsive variants for mobile */
   @media (max-width: 768px) {
     h1 { font-size: 2rem; }
@@ -172,20 +180,21 @@ We used **Option 1** (`<style is:global>` in Layout.astro) because:
 
 ## 📐 **Your Heading Scale**
 
-| Heading | Desktop Size | Mobile Size | Weight | Line Height |
-|---------|-------------|-------------|--------|-------------|
-| **h1** | 2.5rem (40px) | 2rem (32px) | 700 | 1.2 |
-| **h2** | 2rem (32px) | 1.75rem (28px) | 600 | 1.3 |
-| **h3** | 1.75rem (28px) | 1.5rem (24px) | 600 | 1.4 |
-| **h4** | 1.5rem (24px) | 1.25rem (20px) | 600 | 1.45 |
-| **h5** | 1.25rem (20px) | 1.125rem (18px) | 600 | 1.5 |
-| **h6** | 1rem (16px) | 1rem (16px) | 600 | 1.55 |
+| Heading | Desktop Size   | Mobile Size     | Weight | Line Height |
+| ------- | -------------- | --------------- | ------ | ----------- |
+| **h1**  | 2.5rem (40px)  | 2rem (32px)     | 700    | 1.2         |
+| **h2**  | 2rem (32px)    | 1.75rem (28px)  | 600    | 1.3         |
+| **h3**  | 1.75rem (28px) | 1.5rem (24px)   | 600    | 1.4         |
+| **h4**  | 1.5rem (24px)  | 1.25rem (20px)  | 600    | 1.45        |
+| **h5**  | 1.25rem (20px) | 1.125rem (18px) | 600    | 1.5         |
+| **h6**  | 1rem (16px)    | 1rem (16px)     | 600    | 1.55        |
 
 ---
 
 ## 🔧 **How It Works**
 
 ### 1. **Define Theme Variables** (global.css)
+
 ```css
 @theme {
   --text-h1: 2.5rem;
@@ -198,6 +207,7 @@ We used **Option 1** (`<style is:global>` in Layout.astro) because:
 ```
 
 ### 2. **Apply Global Styles** (Layout.astro)
+
 ```astro
 <style is:global>
   h1 {
@@ -208,6 +218,7 @@ We used **Option 1** (`<style is:global>` in Layout.astro) because:
 ```
 
 ### 3. **Use Throughout Your Site**
+
 ```astro
 <!-- Automatically styled -->
 <h1>Page Title</h1>
@@ -216,6 +227,7 @@ We used **Option 1** (`<style is:global>` in Layout.astro) because:
 ```
 
 ### 4. **Override When Needed**
+
 ```astro
 <!-- Component-specific override -->
 <style>
@@ -231,6 +243,7 @@ We used **Option 1** (`<style is:global>` in Layout.astro) because:
 ## 🎨 **Best Practices from Astro Docs**
 
 ### ✅ **DO:**
+
 1. **Use `<style is:global>` in layout** for site-wide heading styles
 2. **Define size variables in `@theme`** for consistency
 3. **Keep global styles minimal** - only truly global typography
@@ -238,6 +251,7 @@ We used **Option 1** (`<style is:global>` in Layout.astro) because:
 5. **Use CSS variables** for maintainability
 
 ### ❌ **DON'T:**
+
 1. **Don't put heading styles in individual components** (duplication)
 2. **Don't use inline styles** for headings (hard to maintain)
 3. **Don't override global styles too often** (defeats the purpose)
@@ -254,6 +268,7 @@ From [Astro Styling Guide](https://docs.astro.build/en/guides/styling/):
 > **Cascading Order:** "Astro CSS rules are evaluated in this order of appearance: `<link>` tags in the head (lowest precedence), imported styles, scoped styles (highest precedence)"
 
 This means:
+
 - Global styles have **lowest specificity**
 - Component scoped styles can **always override** globals
 - This is the **intended behavior** for maintainable CSS
@@ -263,6 +278,7 @@ This means:
 ## 🚀 **Usage Examples**
 
 ### Example 1: Blog Post Page
+
 ```astro
 ---
 import Layout from '../layouts/Layout.astro';
@@ -278,6 +294,7 @@ import Layout from '../layouts/Layout.astro';
 ```
 
 ### Example 2: Component Override
+
 ```astro
 <!-- Special heading for hero section -->
 <h1 class="hero-title">Welcome!</h1>
@@ -293,6 +310,7 @@ import Layout from '../layouts/Layout.astro';
 ```
 
 ### Example 3: Tailwind Utility Override
+
 ```astro
 <!-- Override specific properties with Tailwind -->
 <h1 class="text-red-600 mb-8">Error Page</h1>
@@ -305,6 +323,7 @@ import Layout from '../layouts/Layout.astro';
 ## 🎯 **Summary**
 
 ### ✅ **Implemented Solution:**
+
 - **Method:** `<style is:global>` in Layout.astro
 - **Variables:** Defined in `@theme` (global.css)
 - **Coverage:** h1 through h6
@@ -313,6 +332,7 @@ import Layout from '../layouts/Layout.astro';
 - **Flexible:** Easy to override when needed
 
 ### ✅ **Benefits:**
+
 1. **Consistency** - All headings look the same across the site
 2. **Maintainability** - Change once, update everywhere
 3. **Performance** - Minimal CSS duplication
@@ -320,6 +340,7 @@ import Layout from '../layouts/Layout.astro';
 5. **Accessibility** - Proper heading hierarchy
 
 ### ✅ **Follows Astro Best Practices:**
+
 - Uses `<style is:global>` for truly global styles
 - Leverages CSS variables for theming
 - Respects cascade order
