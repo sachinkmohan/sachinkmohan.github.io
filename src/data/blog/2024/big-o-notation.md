@@ -1,5 +1,6 @@
 ---
 title: Time Complexity and Space Complexity in Big O Notation
+slug: big-o-notation
 description: Understand the concepts of time complexity and space complexity, and how to analyze algorithms using Big O notation.
 date: "2024-05-26"
 tags:

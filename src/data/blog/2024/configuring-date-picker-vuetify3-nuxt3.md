@@ -1,5 +1,6 @@
 ---
 title: Configure Date Picker for internationalisation(i18n) in Vuetify 3 & Nuxt 3
+slug: configuring-date-picker-vuetify3-nuxt3
 description: Learn how to set up the v-date-picker component in Vuetify 3 with internationalization (i18n) support in a Nuxt 3 application.
 date: "2024-05-21"
 tags:
