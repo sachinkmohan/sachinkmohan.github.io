@@ -1,0 +1,21 @@
+---
+import Section from "../components/Section.astro";
+import Layout from "../layouts/Layout.astro";
+import Prose from "../components/Prose.astro";
+
+const { Content } = await import("../data/other/til.md");
+---
+
+<Layout>
+  <Section>
+    <h1>Today I Learned</h1>
+
+    <p class="text-lg mb-1">
+      A collection of small things I learn throughout my coding journey.
+    </p>
+
+    <Prose>
+      <Content />
+    </Prose>
+  </Section>
+</Layout>
