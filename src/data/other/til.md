@@ -35,5 +35,5 @@ const lookUp: { [key: string]: string } = {
   T: "A",
   C: "G",
   G: "C",
-}``;
+};
 ```
