@@ -1,0 +1,22 @@
+---
+import Section from "../components/Section.astro";
+import Layout from "../layouts/Layout.astro";
+import Prose from "../components/Prose.astro";
+
+const { Content } = await import("../data/other/podcast.md");
+---
+
+<Layout>
+  <Section>
+    <h1>Web Stories With Sachin - Resources 🛠️ 📚</h1>
+
+    <p class="text-lg mb-6">
+      A collection of all the resources mentioned in the Web Stories With Sachin
+      podcast.
+    </p>
+
+    <Prose>
+      <Content />
+    </Prose>
+  </Section>
+</Layout>
