@@ -1,6 +1,33 @@
 ## Javascript
 
+### Regex
+
+pattern - /pattern/
+
+flags - g (global) -> /pattern/g
+
+Shortcuts:
+
+- \d - any digit [0-9]
+- \s - whitespace
+- \w - word character [a-zA-Z0-9_]
+
+Quantifiers:
+
+- (-) - one or more
+- (\*) - zero or more
+
 ### Strings
+
+#### Removing whitespace
+
+```js
+"hello world".replace(/ /g, ""); // output - helloworld using regex
+
+"hello world".replaceAll(" ", ""); // output - helloworld, similar to regex
+
+"hello world".split(" ").join(""); // output - helloworld
+```
 
 #### Loop
 
