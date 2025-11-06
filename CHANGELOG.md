@@ -1,5 +1,191 @@
 # Changelog
 
+## [2025-10-24] - Implemented Tag-Based Blog Post Filtering System
+
+### Added
+
+#### **New Utility Module: `src/utils/tags.ts`**
+- **`slugifyTag(tag: string)`** - Converts tag names to URL-safe slugs
+  - Example: "Vue 3" → "vue-3", "Code Optimization" → "code-optimization"
+  - Handles lowercase conversion, space-to-hyphen replacement, and special character removal
+  
+- **`unslugifyTag(slug: string, allTags: string[])`** - Converts slugs back to original tag names
+  - Matches against existing tags to preserve original casing
+  - Fallback: converts hyphens back to spaces
+  
+- **`getAllTags()`** - Retrieves all unique tags from blog collection
+  - Returns sorted array of tag names
+  
+- **`getPostsByTag(tag: string)`** - Filters posts by tag name
+  - Case-insensitive matching using slug comparison
+  - Returns posts sorted by date (newest first)
+  
+- **`getTagCounts()`** - Counts posts per tag
+  - Returns object with tag names as keys and counts as values
+  
+- **`getTagsByPopularity()`** - Gets tags sorted by post count
+  - Returns array of [tag, count] tuples sorted by popularity
+
+#### **New Component: `src/components/TagBadge.astro`**
+- **Reusable clickable tag component** with consistent styling
+  - Accepts `tag` (string), `count` (optional number), `showCount` (optional boolean) props
+  - Links to `/blog/tag/{tag-slug}` for filtering
+  - Hover effects with color change, elevation, and smooth transitions
+  - Optional post count display: "Vue 3 (5)"
+  - Uses CSS variables for theming consistency
+
+#### **New Page: `src/pages/blog/tag/[tag].astro`**
+- **Dynamic tag filtering page** with server-side static generation
+  - URL structure: `/blog/tag/vue-3`, `/blog/tag/code-optimization`
+  - Shows all posts with selected tag
+  - Includes breadcrumb navigation: Home → Blog → Tags → [Tag Name]
+  - Displays post count for the filtered tag
+  - Empty state handling when no posts found
+  - Navigation links to "All Posts" and "View All Tags"
+  - Fully responsive design with mobile optimizations
+
+#### **New Page: `src/pages/blog/tags.astro`**
+- **Tag overview/index page** showing all available tags
+  - URL: `/blog/tags`
+  - Displays all tags sorted by popularity (most posts first)
+  - Shows post count for each tag: "Vue 3 (5)"
+  - Visual tag cloud with gradient background
+  - Summary statistics: total tags and total posts
+  - Breadcrumb navigation
+  - Fade-in animations for better UX
+  - Fully responsive with mobile optimizations
+
+### Changed
+
+#### **Updated: `src/components/BlogCard.astro`**
+- **Replaced static tag badges with clickable `TagBadge` components**
+  - Tags are now interactive links instead of plain text
+  - Removed inline `.tag-badge` styles (moved to TagBadge component)
+  - Imported and integrated TagBadge component
+  - Maintains existing visual appearance while adding click functionality
+
+#### **Updated: `src/pages/blog/[slug].astro`**
+- **Added tag section at bottom of individual blog posts**
+  - Shows "Tagged with:" heading with all post tags
+  - Tags are clickable using TagBadge component
+  - Added post navigation section with links to:
+    - "Back to all posts" → `/blog`
+    - "View all tags" → `/blog/tags`
+  - Styled with proper spacing, borders, and responsive layout
+  - Mobile-optimized navigation (stacks vertically on small screens)
+
+### Technical Implementation
+
+#### **Server-Side Static Generation (SSG)**
+- **Why chosen:** Better SEO, faster performance, shareable URLs
+- **How it works:** 
+  - Astro generates separate HTML pages at build time for each tag
+  - Uses `getStaticPaths()` to create routes dynamically
+  - No JavaScript needed for filtering (works without JS)
+  - Each tag page can be indexed by search engines
+
+#### **URL Structure**
+- **Tag pages:** `/blog/tag/{lowercase-slug}`
+  - "Vue 3" → `/blog/tag/vue-3`
+  - "Code Optimization" → `/blog/tag/code-optimization`
+- **All tags:** `/blog/tags`
+- **Individual posts:** `/blog/{post-slug}` (existing)
+
+#### **Filtering Logic**
+- Uses `getCollection()` with filter callback for tag matching
+- Case-insensitive comparison via slug normalization
+- Sorted by date (newest first) for consistency
+
+### Features
+
+✅ **Clickable Tags** - All tags throughout the site are now interactive
+✅ **Tag-Specific Pages** - Dedicated pages for each tag showing filtered posts
+✅ **Tag Overview** - Central page listing all tags with post counts
+✅ **Related Tags** - Blog posts show their tags at the bottom
+✅ **Post Counts** - Tag badges show number of posts: "Vue 3 (5)"
+✅ **Breadcrumb Navigation** - Clear navigation path on all tag pages
+✅ **SEO Optimized** - Each tag page is indexable by search engines
+✅ **Shareable URLs** - Direct links to filtered tag views
+✅ **Responsive Design** - Mobile-optimized layouts throughout
+✅ **Empty States** - Graceful handling when no posts found
+✅ **Visual Feedback** - Hover effects and transitions for better UX
+
+### User Experience Improvements
+
+1. **Discovery** - Users can explore content by topics of interest
+2. **Navigation** - Easy to find related posts on similar topics
+3. **Context** - Clear understanding of post categorization
+4. **Accessibility** - Works without JavaScript, keyboard navigable
+5. **Performance** - Fast page loads with pre-rendered static pages
+6. **Mobile-First** - Optimized layouts for all screen sizes
+
+### SEO Benefits
+
+✅ **Indexable Tag Pages** - Search engines can discover content by topic
+✅ **Semantic URLs** - Clean, readable URLs for better rankings
+✅ **Internal Linking** - Improved site structure and link equity
+✅ **Topic Authority** - Grouped content signals expertise in areas
+✅ **Better Discoverability** - Users can find specific topics via search
+
+### File Structure
+
+```
+src/
+├── utils/
+│   └── tags.ts                    (NEW - utility functions)
+├── components/
+│   ├── BlogCard.astro             (UPDATED - clickable tags)
+│   └── TagBadge.astro             (NEW - reusable tag component)
+└── pages/
+    └── blog/
+        ├── [slug].astro           (UPDATED - tags at bottom)
+        ├── tags.astro             (NEW - all tags overview)
+        └── tag/
+            └── [tag].astro        (NEW - filtered posts by tag)
+```
+
+### Usage Examples
+
+**Clicking a tag:**
+```
+BlogCard → Click "Vue 3" → /blog/tag/vue-3 → See all Vue 3 posts
+```
+
+**Browsing all tags:**
+```
+Visit /blog/tags → See all tags with counts → Click any tag → Filtered posts
+```
+
+**Reading a post:**
+```
+Individual blog post → Scroll to bottom → See tags → Click to explore related posts
+```
+
+### Performance Impact
+
+- **Build time:** Minimal increase (generates one page per unique tag)
+- **Page load:** Faster than client-side filtering (pre-rendered HTML)
+- **SEO:** Significantly improved (indexable tag pages)
+- **Accessibility:** Perfect (works without JavaScript)
+
+### Browser Compatibility
+
+✅ All modern browsers (Chrome, Firefox, Safari, Edge)
+✅ Works with JavaScript disabled
+✅ Fully accessible via keyboard navigation
+✅ Screen reader compatible
+
+### Related Files
+
+- `src/utils/tags.ts` - Tag utility functions
+- `src/components/TagBadge.astro` - Clickable tag component
+- `src/components/BlogCard.astro` - Updated with clickable tags
+- `src/pages/blog/tag/[tag].astro` - Tag filtering page
+- `src/pages/blog/tags.astro` - All tags overview
+- `src/pages/blog/[slug].astro` - Updated with tag section
+
+---
+
 ## [2025-10-22] - Implemented Global Heading Styles (h1-h6)
 
 ### Added
