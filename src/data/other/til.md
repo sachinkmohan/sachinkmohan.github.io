@@ -50,6 +50,25 @@ const c = ["c", "a", "t"];
 c.join(""); // cat
 ```
 
+### Arrays
+
+```js
+const numArr = [1, 2, 3];
+
+// Replace classical for loop
+
+for (let val of numArr) {
+  console.log(val); // 1,2,3
+}
+```
+
+#### reduce method
+
+```js
+// finding sum using reduce
+[1, 2, 3].reduce((acc, currVal) => acc + currVal); // 1+2+3 = 6
+```
+
 ## TypeScript
 
 #### Type safety on Objects
