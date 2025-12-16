@@ -29,6 +29,14 @@ Quantifiers:
 "hello world".split(" ").join(""); // output - helloworld
 ```
 
+#### Splitting
+
+```js
+"abc".split(""); // output ['a','b','c']
+```
+
+> Splits based on seperator. If the seperator is an empty string, then it splits at every character.
+
 #### Loop
 
 ```js
@@ -48,6 +56,15 @@ single character t */
 ```js
 const c = ["c", "a", "t"];
 c.join(""); // cat
+```
+
+#### Other Instance methods
+
+1. `toString()` - converts any data type to String.
+
+```js
+(123).toString(); // output '123'
+true.toString(); // "true"
 ```
 
 ### Arrays
