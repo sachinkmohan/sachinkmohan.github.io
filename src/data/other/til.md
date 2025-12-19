@@ -58,7 +58,20 @@ const c = ["c", "a", "t"];
 c.join(""); // cat
 ```
 
+#### Static Methods
+
+> Integer - Whole number i.e + ve, - ve or 0.
+
+```js
+Math.sqrt(4); // 2 - finds square root
+Number.isInteger(3); // true,
+```
+
 #### Other Instance methods
+
+> Static Methods are functions of the class namespace. Eg `Math.sqrt(9) // Output 3 `
+
+> Instance Methods are functions below to a specified object. Below eg, specific to number 123
 
 1. `toString()` - converts any data type to String.
 
