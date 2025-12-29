@@ -11,7 +11,7 @@ tags:
 
 > 10 quick newsletter writing tips from a guy who's published a newsletter for 9 years to 30k subscribers:
 
-[Source](https://www.linkedin.com/posts/thatjoshspector_10-quick-newsletter-writing-tips-from-a-guy-activity-7411159050463195136-T7Ta/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAGGh8EBr8LYe5W61Zn8bh2DXgKl57zDgV0)
+[LinkedIn Post](https://www.linkedin.com/posts/thatjoshspector_10-quick-newsletter-writing-tips-from-a-guy-activity-7411159050463195136-T7Ta/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAGGh8EBr8LYe5W61Zn8bh2DXgKl57zDgV0)
 
 1. Send shorter issues, more frequently
 
