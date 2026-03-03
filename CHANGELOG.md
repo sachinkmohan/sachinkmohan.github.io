@@ -1,5 +1,35 @@
 # Changelog
 
+## [2026-03-03] - TIL Tags Feature
+
+### Added
+
+- **Tags support for TIL posts**
+  - Tags can be defined in TIL post frontmatter as an optional array field
+  - Tags are displayed as styled badges on both listing page and individual post pages
+  - Uses consistent styling with existing blog card components (`.tag-badge` class)
+
+### Changed
+
+- **TIL Card component** (`src/components/TILCard.astro`)
+  - Removed redundant category badges from listing cards
+  - Added tag display with consistent styling
+  - Categories are now only shown as section headings on the listing page
+
+- **Individual TIL post pages** (`src/pages/til/[...slug].astro`)
+  - Removed redundant category badge from post header
+  - Added tags display in the post metadata section
+  - Simplified post header to show only date and tags
+
+### Technical Details
+
+- **TILCard Component**: Maps over `post.data.tags` array and renders each tag as a styled badge
+- **Post Page**: Conditionally renders tags container only when tags exist
+- **Styling**: Maintains visual consistency with `--tag-bg` CSS variable
+- **Responsive**: Metadata section uses flexbox with wrap support for mobile devices
+
+---
+
 ## [2025-10-22] - Implemented Global Heading Styles (h1-h6)
 
 ### Added
