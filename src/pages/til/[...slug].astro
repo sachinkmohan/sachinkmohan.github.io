@@ -1,0 +1,100 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/Section.astro";
+import Prose from "../../components/Prose.astro";
+import { formatDate } from "../../utils/formatDate";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("til");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<"til">;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const formattedDate = formatDate(post.data.date);
+---
+
+<Layout>
+  <Section>
+    <div class="til-post">
+      <a href="/til" class="back-link">← Back to TIL</a>
+
+      <h1 class="post-title">{post.data.title}</h1>
+
+      <div class="post-meta">
+        <p class="post-date">{formattedDate}</p>
+        {post.data.tags && post.data.tags.length > 0 && (
+          <>
+            <span class="meta-separator">•</span>
+            <p class="tags-container">
+              {post.data.tags.map((tag) => <span class="tag-badge">{tag}</span>)}
+            </p>
+          </>
+        )}
+      </div>
+
+      <Prose>
+        <Content />
+      </Prose>
+    </div>
+  </Section>
+</Layout>
+
+<style>
+  .til-post {
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .post-title {
+      margin-bottom: 16px;
+      margin-top: 0;
+    }
+
+    .post-meta {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 30px;
+      font-size: 16px;
+      flex-wrap: wrap;
+
+      .post-date {
+        color: var(--light);
+        margin: 0;
+      }
+
+      .meta-separator {
+        color: var(--light);
+      }
+
+      .tags-container {
+        display: flex;
+        gap: 8px;
+        margin: 0;
+      }
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      margin-top: 30px;
+    }
+  }
+</style>

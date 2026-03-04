@@ -1,9 +1,29 @@
 ---
+import { getCollection } from "astro:content";
 import Section from "../components/Section.astro";
 import Layout from "../layouts/Layout.astro";
-import Prose from "../components/Prose.astro";
+import TILCard from "../components/TILCard.astro";
 
-const { Content } = await import("../data/other/til.md");
+// Get all TIL posts and group by category
+const posts = await getCollection("til");
+const grouped = posts.reduce((acc, post) => {
+  const category = post.data.category;
+  if (!acc[category]) {
+    acc[category] = [];
+  }
+  acc[category].push(post);
+  return acc;
+}, {} as Record<string, typeof posts>);
+
+// Sort posts within each category by date (newest first)
+Object.keys(grouped).forEach((category) => {
+  grouped[category].sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+  );
+});
+
+// Sort categories alphabetically
+const sortedCategories = Object.keys(grouped).sort();
 ---
 
 <Layout>
@@ -14,8 +34,34 @@ const { Content } = await import("../data/other/til.md");
       A collection of small things I learn throughout my coding journey.
     </p>
 
-    <Prose>
-      <Content />
-    </Prose>
+    {sortedCategories.map((category) => (
+      <div class="category-section">
+        <h2>{category}</h2>
+        <div class="posts-list">
+          {grouped[category].map((post) => (
+            <TILCard post={post} />
+          ))}
+        </div>
+      </div>
+    ))}
   </Section>
 </Layout>
+
+<style>
+  .category-section {
+    margin-bottom: 60px;
+
+    h2 {
+      margin-bottom: 30px;
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 10px;
+    }
+  }
+
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+</style>

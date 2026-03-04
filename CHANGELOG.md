@@ -1,5 +1,51 @@
 # Changelog
 
+## [2026-03-04] - TIL Tags Feature & Code Quality Improvements
+
+### Added
+
+- **Tags support for TIL posts**
+  - Tags can be defined in TIL post frontmatter as an optional array field
+  - Tags are displayed as styled badges on both listing page and individual post pages
+  - Uses consistent styling with existing blog card components (`.tag-badge` class)
+
+### Changed
+
+- **TIL Card component** (`src/components/TILCard.astro`)
+  - Removed redundant category badges from listing cards
+  - Added tag display with consistent styling
+  - Categories are now only shown as section headings on the listing page
+  - Removed duplicate `.tag-badge` CSS (moved to global styles)
+
+- **Individual TIL post pages** (`src/pages/til/[...slug].astro`)
+  - Removed redundant category badge from post header
+  - Added tags display in the post metadata section
+  - Simplified post header to show only date and tags
+  - Removed duplicate `.tag-badge` CSS (moved to global styles)
+
+- **Global styles** (`src/styles/global.css`)
+  - Added shared `.tag-badge` styling to eliminate duplication across components
+  - Single source of truth for tag badge appearance
+
+### Refactored
+
+- **Date formatting utility** (`src/utils/formatDate.ts`)
+  - Created shared `formatDate()` function to eliminate code duplication
+  - Replaces inline `new Date(...).toLocaleDateString(...)` calls
+  - Single source of truth for consistent date formatting across components
+  - Used in both `TILCard.astro` and `pages/til/[...slug].astro`
+
+### Technical Details
+
+- **TILCard Component**: Maps over `post.data.tags` array and renders each tag as a styled badge
+- **Post Page**: Conditionally renders tags container only when tags exist
+- **Date Formatting**: Extracted to shared utility for DRY principle
+- **Styling**: Maintains visual consistency with `--tag-bg` CSS variable
+- **Responsive**: Metadata section uses flexbox with wrap support for mobile devices
+- **CSS Organization**: Shared `.tag-badge` style in global CSS, component-specific styles remain scoped
+
+---
+
 ## [2025-10-22] - Implemented Global Heading Styles (h1-h6)
 
 ### Added
