@@ -41,11 +41,11 @@ console.log(regex.test('Goodbye'));      // false
 
 ### `exec()` - Find match details
 ```javascript
-const regex = /(\w+)@(\w+)/;
+const regex = /(\w+)@([\w.]+)/;
 const match = regex.exec('contact@example.com');
 console.log(match[0]);  // 'contact@example.com'
 console.log(match[1]);  // 'contact'
-console.log(match[2]);  // 'example'
+console.log(match[2]);  // 'example.com'
 ```
 
 ### String Methods with RegExp

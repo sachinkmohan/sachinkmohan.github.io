@@ -16,9 +16,9 @@ Exports is used to share code between modules.
 `operations.js`
 
 ```js
-export function sum(a,b) => a +b
+export const sum = (a, b) => a + b;
 // import
-import {sum} from './operations.js'
+import { sum } from "./operations.js";
 ```
 
 - Any number of exports possible
@@ -29,9 +29,11 @@ import {sum} from './operations.js'
 ## Default
 
 ```js
-export default function sum(a,b) => a+b
-//import
-import addFunction from './operations.js'
+export default function sum(a, b) {
+  return a + b;
+}
+// import
+import addFunction from "./operations.js";
 ```
 
 - Any name is possible while importing

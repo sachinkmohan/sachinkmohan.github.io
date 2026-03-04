@@ -1,6 +1,6 @@
 # Changelog
 
-## [2026-03-03] - TIL Tags Feature
+## [2026-03-04] - TIL Tags Feature & Code Quality Improvements
 
 ### Added
 
@@ -15,11 +15,17 @@
   - Removed redundant category badges from listing cards
   - Added tag display with consistent styling
   - Categories are now only shown as section headings on the listing page
+  - Removed duplicate `.tag-badge` CSS (moved to global styles)
 
 - **Individual TIL post pages** (`src/pages/til/[...slug].astro`)
   - Removed redundant category badge from post header
   - Added tags display in the post metadata section
   - Simplified post header to show only date and tags
+  - Removed duplicate `.tag-badge` CSS (moved to global styles)
+
+- **Global styles** (`src/styles/global.css`)
+  - Added shared `.tag-badge` styling to eliminate duplication across components
+  - Single source of truth for tag badge appearance
 
 ### Technical Details
 
@@ -27,6 +33,7 @@
 - **Post Page**: Conditionally renders tags container only when tags exist
 - **Styling**: Maintains visual consistency with `--tag-bg` CSS variable
 - **Responsive**: Metadata section uses flexbox with wrap support for mobile devices
+- **CSS Organization**: Shared `.tag-badge` style in global CSS, component-specific styles remain scoped
 
 ---
 
