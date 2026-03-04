@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { formatDate } from "../utils/formatDate";
 
 interface Props {
   post: CollectionEntry<"til">;
@@ -14,13 +15,7 @@ const { post } = Astro.props;
   >
   <div class="metadata">
     <p class="text-gray-600">
-      {
-        new Date(post.data.date).toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        })
-      }
+      {formatDate(post.data.date)}
     </p>
     {post.data.tags && post.data.tags.length > 0 && (
       <>

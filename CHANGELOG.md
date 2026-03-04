@@ -27,10 +27,19 @@
   - Added shared `.tag-badge` styling to eliminate duplication across components
   - Single source of truth for tag badge appearance
 
+### Refactored
+
+- **Date formatting utility** (`src/utils/formatDate.ts`)
+  - Created shared `formatDate()` function to eliminate code duplication
+  - Replaces inline `new Date(...).toLocaleDateString(...)` calls
+  - Single source of truth for consistent date formatting across components
+  - Used in both `TILCard.astro` and `pages/til/[...slug].astro`
+
 ### Technical Details
 
 - **TILCard Component**: Maps over `post.data.tags` array and renders each tag as a styled badge
 - **Post Page**: Conditionally renders tags container only when tags exist
+- **Date Formatting**: Extracted to shared utility for DRY principle
 - **Styling**: Maintains visual consistency with `--tag-bg` CSS variable
 - **Responsive**: Metadata section uses flexbox with wrap support for mobile devices
 - **CSS Organization**: Shared `.tag-badge` style in global CSS, component-specific styles remain scoped
