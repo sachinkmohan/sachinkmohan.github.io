@@ -39,6 +39,31 @@ User prompt -> How to split a string in JS?
 
 System Prompt -> You are a coding expert in Javascript. You help solve problems of beginners. Limit your response to 100 characters.
 
+> System prompts are really important. Invest time in them to make your output look better. Below is an example
+
+```markdown
+You are the Gift Genie!
+Make your gift suggestions thoughtful and practical.
+The user will describe the gift's recipient.
+Your response must be in structured Markdown.
+
+Each gift must:
+
+- Have a clear heading
+- A short explanation of why it would work
+
+  If the user mentions a location or a time constraint,
+  add another section under each gift that gives the user
+  a step by step guide on where and how they can get the gift.
+
+  Skip intros and conclusions.
+  Only output gift suggestions.
+
+  End with a section with an H2 heading titled "Questions for you"
+  that contains follow-ups that would help improve the
+  gift suggestions
+```
+
 ### Token Costs and Context Windows
 
 - Different models output cost differently.
@@ -68,5 +93,111 @@ const stream = await openai.chat.completions.create({
 ```
 
 We can then use these chunks to render in the UI by using for await loop. `for await(const chunk of stream)`
+
+A sample snippet for streaming below.
+
+```js
+for await (const chunk of response) {
+  output = output + chunk.choices[0].delta.content ?? "";
+  const mdContent = marked.parse(output);
+  const html = DOMPurify.sanitize(mdContent);
+  outputContent.innerHTML = html;
+}
+```
+
+### Few Shot Prompting
+
+- A shot is just an example.
+- Zero-shot - no example
+- Few-shot - a small number of examples. Also called as multi-shot prompting.
+
+### Temperature & Top P
+
+#### Temperature
+
+Temperature - How risky the model is willing to be, when choosing the next word.
+
+Higher -> Model takes creative risks.
+Lower -> Model plays it safer
+
+#### Top P
+
+Model has many possible next words.
+
+top_p limits how wide of a slice of possibilities that the model is allowed to consider.
+
+top_p: 1.0 -> default setting
+top_p: 0.9 -> ignore the least likely options
+top_p: 0.5 -> be very conservative
+
+> Temperature makes model more bold, Top_p makes model more selective. They are not meant to be changed. In some cases, mostly temperature is changed. But they are used only for debug purposes to see if the prompt is causing issues or these values.
+
+### Response API
+
+Similar to chat completions API, there is a Responses API which outputs similar responses.
+
+### Structured outputs
+
+If you need structured output, you can either add to the system prompt asking for a specific JSON output. The other best option is to use schemas.
+
+> Use it when your output needs to be parsed, validated or trusted by other code.
+
+Schemas can be add to the API response like below.
+
+```js
+import { giftSchemaResponses } from "./schema-responses.js"
+
+async function getGiftSuggestion() {
+  const response = await openai.responses.create({
+    model: process.env.AI_MODEL,
+    input: `Suggest 3 gifts for a coffee lover.`,
+    text: {
+      format: giftSchemaResponses
+    }
+  });
+
+  // schema-response.js
+
+  export const giftSchemaResponses = {
+  type: "json_schema",
+  name: "gift_suggestions",
+  schema: {
+    type: "object",
+    additionalProperties: false,
+    properties: {
+      gifts: {
+        type: "array",
+        items: {
+          type: "object",
+          additionalProperties: false,
+          properties: {
+            name: { type: "string" },
+            price_range: { type: "string" },
+            why_its_good: { type: "string" },
+          },
+          required: ["name", "price_range", "why_its_good"],
+        },
+      },
+    },
+    required: ["gifts"],
+  },
+};
+
+
+```
+
+### Web Search Tool
+
+Responses API can allow to web search. The syntax as below.
+
+[Take me to Open AI documentation](https://developers.openai.com/api/docs/guides/tools-web-search)
+
+```js
+const response = await openai.responses.create({
+  model: process.env.AI_MODEL,
+  input: "Best coffee machines available right now under 300 euros.",
+  tools: [{ type: "web_search" }],
+});
+```
 
 ##### To be continued...
