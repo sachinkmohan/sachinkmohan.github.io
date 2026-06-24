@@ -4,7 +4,7 @@ date: "2026-06-24"
 category: JavaScript
 description: Learning JS String methods
 tags:
-  - javascript
+  - JavaScript
 ---
 
 ## charAt()

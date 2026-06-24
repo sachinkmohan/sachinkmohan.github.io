@@ -4,7 +4,7 @@ description: Express JS basics learned on scrimba.com
 category: Backend
 date: "2026-06-10"
 tags:
-  - express
+  - Express
 ---
 
 ## Boilerplate code

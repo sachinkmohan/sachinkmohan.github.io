@@ -4,7 +4,7 @@ date: "2026-06-11"
 category: JavaScript
 description: Types of undefined and null
 tags:
-  - types
+  - Types
 ---
 
 `typeof undefined // undefined`
