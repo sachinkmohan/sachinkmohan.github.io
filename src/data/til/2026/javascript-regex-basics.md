@@ -36,6 +36,8 @@ const pattern = new RegExp("hello", "i");
 
 ### `test()` - Check if pattern exists
 
+Tests for a match in a string. It returns true or false.
+
 ```javascript
 const regex = /hello/i;
 console.log(regex.test("Hello World")); // true
