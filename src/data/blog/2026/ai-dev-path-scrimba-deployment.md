@@ -1,5 +1,5 @@
 ---
-title: Learnings from the course - AI Engineer Path(Scrimba) - Part 2 - Deployment (WIP 🚧)
+title: Learnings from the course - AI Engineer Path(Scrimba) - Part 2 - Deployment
 slug: learnings-ai-engineer-path-part-2-deployment
 description: Notes on Deployment
 date: "2026-06-24"
@@ -18,4 +18,4 @@ tags:
   - X-Frame-Options -> to prevent clickjacking
   - X-Content-Type-Options -> to prevent MIME-sniffing.
 
-## Coming up Next - Node Environment
+## Coming up Next - Open Source Models
