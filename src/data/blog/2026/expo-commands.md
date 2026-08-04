@@ -12,3 +12,7 @@ tags:
 > OTA updates for Android
 
 `eas update --channel production --platform android --message "COMMIT_MSG"`
+
+> Generate build for development
+
+`eas build --profile development`
