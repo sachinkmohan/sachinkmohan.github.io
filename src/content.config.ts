@@ -14,7 +14,7 @@ const project = defineCollection({
 });
 
 const blog = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "src/data/blog" }),
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "src/data/blog" }),
   schema: z.object({
     title: z.string(),
     description: z.string().max(200),
@@ -25,7 +25,7 @@ const blog = defineCollection({
 });
 
 const til = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "src/data/til" }),
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "src/data/til" }),
   schema: z.object({
     title: z.string(),
     date: z.string().date(),

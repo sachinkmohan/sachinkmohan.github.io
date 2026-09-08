@@ -5,13 +5,17 @@ import tailwindcss from "@tailwindcss/vite";
 
 import rehypeExternalLinks from "rehype-external-links";
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://sachinkmohan.com",
   base: "/",
+
   vite: {
     plugins: [tailwindcss()],
   },
+
   markdown: {
     rehypePlugins: [
       [
@@ -24,4 +28,6 @@ export default defineConfig({
       ],
     ],
   },
+
+  integrations: [mdx()],
 });
