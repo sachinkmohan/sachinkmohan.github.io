@@ -1,0 +1,63 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/Section.astro";
+import Prose from "../../components/Prose.astro";
+
+export async function getStaticPaths() {
+  const topics = await getCollection("wiki");
+  return topics.map((topic) => ({
+    params: { slug: topic.id },
+    props: { topic },
+  }));
+}
+
+interface Props {
+  topic: CollectionEntry<"wiki">;
+}
+
+const { topic } = Astro.props;
+const { Content } = await render(topic);
+---
+
+<Layout>
+  <Section>
+    <div class="wiki-topic">
+      <a href="/wiki" class="back-link">← Back to Wiki</a>
+
+      <h1 class="topic-title">{topic.data.title}</h1>
+      <p class="topic-description">{topic.data.description}</p>
+
+      <Prose>
+        <Content />
+      </Prose>
+    </div>
+  </Section>
+</Layout>
+
+<style>
+  .wiki-topic {
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.2s;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .topic-title {
+      margin-bottom: 8px;
+      margin-top: 0;
+    }
+
+    .topic-description {
+      color: var(--light);
+      margin-bottom: 30px;
+    }
+  }
+</style>

@@ -12,6 +12,10 @@ export default defineConfig({
   site: "https://sachinkmohan.com",
   base: "/",
 
+  redirects: {
+    "/blog/best-writing-resources": "/wiki/writing",
+  },
+
   vite: {
     plugins: [tailwindcss()],
   },

@@ -35,4 +35,12 @@ const til = defineCollection({
   }),
 });
 
-export const collections = { project, blog, til };
+const wiki = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "src/data/wiki" }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string().max(200),
+  }),
+});
+
+export const collections = { project, blog, til, wiki };
